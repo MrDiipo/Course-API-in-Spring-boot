@@ -11,7 +11,7 @@
     <groupId>com</groupId>
     <artifactId>Course-API</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>Course-API</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -43,6 +43,12 @@
             <groupId>org.apache.derby</groupId>
             <artifactId>derby</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
     </dependencies>
