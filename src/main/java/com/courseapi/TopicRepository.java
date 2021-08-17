@@ -1,11 +1,17 @@
 package com.courseapi;
 
+import com.courseapi.models.Topic;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class TopicRepository {
+public interface TopicRepository extends CrudRepository<Topic, String> {
+
+
     //getAllTopics()
     //getTopic(String id)
     //updateTopic(Topic t)
     //deleteTopic(Topic t)
+
+
 }

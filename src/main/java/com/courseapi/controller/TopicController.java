@@ -5,8 +5,8 @@ import com.courseapi.models.Topic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class TopicController {
@@ -20,7 +20,7 @@ public class TopicController {
     }
 
     @RequestMapping("/topic/{id}")
-    public Topic getTopic(@PathVariable String id){
+    public Optional<Topic> getTopic(@PathVariable String id){
         return topicService.getTopic(id);
     }
 
