@@ -34,7 +34,7 @@ public class CourseController {
     @RequestMapping(method = RequestMethod.PUT, value = "/topic/{topicId}/courses/{id}")
     public void updateCourse(@RequestBody Course course, @PathVariable String id,  @PathVariable String topicId){
         course.setTopic(new Topic(topicId, "", ""));
-        CourseService.updateCourse(id, course);
+        CourseService.updateCourse(course);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/topic/{topicId}/courses/{id}")

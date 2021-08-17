@@ -12,29 +12,29 @@ import java.util.Optional;
 public class CourseService {
 
     @Autowired
-    private CourseRepository topicRepository;
+    private CourseRepository courseRepository;
 
-    public List<Course> getAllCourses() {
+    public List<Course> getAllCourses(String topicId) {
         List<Course> courses = new ArrayList<>();
-        topicRepository.findAll().forEach(courses::add);
+        courseRepository.findByTopicId(topicId).forEach(courses::add);
         return courses;
     }
 
     public Optional<Course> getCourse(String id) {
-        return topicRepository.findById(id);
+        return courseRepository.findById(id);
         //return topics.stream().filter(topic -> topic.getId().equals(id)).findFirst().get();
     }
 
     public void addCourse(Course course) {
 
         //topics.add(topic);
-        topicRepository.save(course);
+        courseRepository.save(course);
     }
 
-    public void updateCourse(String id, Course course) {
-      topicRepository.save(course);}
+    public void updateCourse(Course course) {
+      courseRepository.save(course);}
 
     public void deleteCourse(String id) {
-        topicRepository.deleteById(id);
+        courseRepository.deleteById(id);
             }
 }
