@@ -2,6 +2,7 @@ package com.courseapi.courseapi.controller;
 
 import com.courseapi.courseapi.CourseService;
 import com.courseapi.courseapi.models.Course;
+import com.courseapi.topicapi.models.Topic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,19 +25,20 @@ public class CourseController {
         return CourseService.getCourse(id);
     }
 
-    @RequestMapping(method=RequestMethod.POST, value="/topic/{topicId}/courses/{id}")
-    public void addCourse(@RequestBody Course course){
-
+    @RequestMapping(method=RequestMethod.POST, value="/topic/{topicId}/courses")
+    public void addCourse(@RequestBody Course course, @PathVariable String topicId){
+        course.setTopic(new Topic(topicId, "", ""));
         CourseService.addCourse(course);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/topics/{id}")
-    public void updateCourse(@RequestBody Course course, @PathVariable String id){
+    @RequestMapping(method = RequestMethod.PUT, value = "/topic/{topicId}/courses/{id}")
+    public void updateCourse(@RequestBody Course course, @PathVariable String id,  @PathVariable String topicId){
+        course.setTopic(new Topic(topicId, "", ""));
         CourseService.updateCourse(id, course);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/topics/{id}")
-    public void deleteCourse(@PathVariable String id){
+    @RequestMapping(method = RequestMethod.DELETE, value = "/topic/{topicId}/courses/{id}")
+    public void deleteCourse(@PathVariable String id, @PathVariable String topicId){
         CourseService.deleteCourse(id);
     }
 }
