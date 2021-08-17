@@ -1,7 +1,7 @@
-package com.courseapi.controller;
+package com.courseapi.topicapi.controller;
 
-import com.courseapi.TopicService;
-import com.courseapi.models.Topic;
+import com.courseapi.topicapi.TopicService;
+import com.courseapi.topicapi.models.Topic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

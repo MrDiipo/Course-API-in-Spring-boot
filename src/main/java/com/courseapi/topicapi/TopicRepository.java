@@ -1,6 +1,6 @@
-package com.courseapi;
+package com.courseapi.topicapi;
 
-import com.courseapi.models.Topic;
+import com.courseapi.topicapi.models.Topic;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

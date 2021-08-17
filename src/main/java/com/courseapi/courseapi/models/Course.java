@@ -1,10 +1,10 @@
-package com.courseapi.models;
+package com.courseapi.courseapi.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Topic {
+public class Course {
 
     // Fields
     @Id
@@ -13,9 +13,9 @@ public class Topic {
     private String description;
 
     // Constructors
-    public Topic(){ }
+    public Course(){ }
 
-    public Topic(String id, String name, String description){
+    public Course(String id, String name, String description){
         this.id = id;
         this.name = name;
         this.description = description;

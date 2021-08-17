@@ -1,11 +1,10 @@
-package com.courseapi;
+package com.courseapi.topicapi;
 
-import com.courseapi.models.Topic;
+import com.courseapi.topicapi.models.Topic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,12 +13,6 @@ public class TopicService {
 
     @Autowired
     private TopicRepository topicRepository;
-
-    private List<Topic> topics = new ArrayList<>(Arrays.asList(
-            (new Topic("Spring", "Spring Framework", "Spring Framework Description")),
-            (new Topic("Java", "Core Java", "Core Java Description")),
-            (new Topic("Javascript", "Fluent JavaScript", "Javascript Description"))
-    ));
 
     public List<Topic> getAllTopics() {
         List<Topic> topics = new ArrayList<>();
