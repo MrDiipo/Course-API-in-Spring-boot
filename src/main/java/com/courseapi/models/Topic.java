@@ -1,8 +1,13 @@
 package com.courseapi.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Topic {
 
     // Fields
+    @Id
     private String id;
     private String name;
     private String description;
@@ -36,6 +41,7 @@ public class Topic {
     public String getDescription() {
         return description;
     }
+
 
     public void setDescription(String description) {
         this.description = description;
